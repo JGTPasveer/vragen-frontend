@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Skills Questionnaire</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&display=swap">
+  <style>
+    body {
+      background: #27262e;
+      color: white;
+    }
+
+    .page {
+      display: none;
+      max-width: 700px;
+      width: 90%;
+      margin: auto;
+      animation: fadeIn 0.8s ease both;
+    }
+
+    .question-block {
+      background-color: #363547;
+      border-radius: 15px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    label {
+      font-size: 18px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content">
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="page" style="display:block; text-align:center;">
+      <div class="container pt-4 pt-xl-5">
+        <p class="fw-bold text-success mb-2">Welkom bij de vragenlijst</p>
+        <h1 class="fw-bold">Voer uw naam in om te beginnen:</h1>
+      </div>
+      <input type="text" id="participant-name" class="form-control" placeholder="Uw naam" required>
+      <button id="start-button" class="btn btn-primary mt-4 mb-5">Begin</button>
+      <p id="intro-text">
+        Deze vragenlijst bevat vragen die met het volgende beantwoord kunnen worden:
+        (<strong>Basis</strong>, <strong>Gevorderd</strong>, or <strong>Expert</strong>).
+        Er is altijd een optie voor een eventuele toelichting.
+      </p>
+    </div>
+
+    <!-- Progress Bar -->
+    <div id="progress-bar-div" style="display: none; margin-bottom: 24px">
+      <p id="progress-bar-text" class="fw-bold text-success mb-2" style="margin-top: 24px; text-align: center"></p>
+      <div class="progress" style="background-color: #ffffff; margin: auto; width: 300px; height: 10px;">
+        <div id="progress-bar" class="progress-bar" role="progressbar"
+          style="background-color: #3cf7b7; width: 10%;"></div>
+      </div>
+    </div>
+
+    <!-- Questionnaire Pages -->
+    <!-- Repeat pattern for 10 sections -->
+    <div id="section-page-1" class="page" style="display:none;">
+      <h2>Betrouwbaar</h2>
+
+      <!-- Subsection 1 -->
+      <h4 class="mt-3">Gedrag</h4>
+
+      <div class="question-block">
+        <label for="s1sub1q1">Ik kom gemaakte afspraken na</label>
+        <select class="form-control" id="s1sub1q1" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s1sub1q2">Ik communiceer open en transparant</label>
+        <select class="form-control" id="s1sub1q2" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s1sub1q3">Ik neem verantwoordelijkheid voor mijn werk</label>
+        <select class="form-control" id="s1sub1q3" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s1sub1q4">Ik vervul een voorbeeldfunctie in werkethiek en gedrag</label>
+        <select class="form-control" id="s1sub1q4" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s1sub1q5">Ik ben bewust hoe mijn gedragingen en keuzes invloed hebben op anderen</label>
+        <select class="form-control" id="s1sub1q5" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+
+      <!-- Subsection 2 -->
+      <h4 class="mt-4">Vaardigheid</h4>
+
+      <div class="question-block">
+        <label for="s1sub2q1">Ik heb het vermogen om goed te plannen en te prioriteren</label>
+        <select class="form-control" id="s1sub2q1" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s1sub2q2">Ik heb het vermogen om mezelf te motiveren en verantwoordelijkheden serieus te nemen</label>
+        <select class="form-control" id="s1sub2q2" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s1sub2q3">Ik heb het vermogen duidelijk en eerlijk te communiceren over persoonlijke en werk gerelateerde voortgang </label>
+        <select class="form-control" id="s1sub2q3" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s1sub2q4">Ik heb het vermogen zelfstandig problemen te identificeren en op te lossen of waar nodig is om hulp te vragen</label>
+        <select class="form-control" id="s1sub2q4" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s1sub2q5">Ik heb het vermogen om integer om te gaan met informatie </label>
+        <select class="form-control" id="s1sub2q5" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+    </div>
+
+    <!---------------------------------->
+
+      <div id="section-page-2" class="page" style="display:none;">
+      <h2>Verbindend</h2>
+
+      <!-- Subsection 1 -->
+      <h4 class="mt-3">Gedrag</h4>
+
+      <div class="question-block">
+        <label for="s2sub1q1">Ik luister actief en empatisch om andere mensen te begrijpen</label>
+        <select class="form-control" id="s2sub1q1" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s2sub1q2">Ik ben bereid om samen te werken met teamleden, collega's of anderen</label>
+        <select class="form-control" id="s2sub1q2" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s2sub1q3">Ik nodig anderen uit hun mening en ideeën te delen</label>
+        <select class="form-control" id="s2sub1q3" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s2sub1q4">Ik zorg voor goede, respectvolle relaties en zoek daarin genoeg het contact op</label>
+        <select class="form-control" id="s2sub1q4" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s2sub1q5">Ik erken en waardeer de bijdrage van anderen</label>
+        <select class="form-control" id="s2sub1q5" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+
+      <!-- Subsection 2 -->
+      <h4 class="mt-4">Vaardigheid</h4>
+
+      <div class="question-block">
+        <label for="s2sub2q1">Ik heb het vermogen om helder en effectief informatie over te brengen </label>
+        <select class="form-control" id="s2sub2q1" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s2sub2q2">Ik heb het vermogen me in te leven in de gevoelens en gedachten van anderen</label>
+        <select class="form-control" id="s2sub2q2" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s2sub2q3">Ik heb het vermogen relaties te starten en te onderhouden</label>
+        <select class="form-control" id="s2sub2q3" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s2sub2q4">Ik heb het vermogen relaties om te netwerken, ook buiten de organisatie</label>
+        <select class="form-control" id="s2sub2q4" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s2sub2q5">Ik heb het vermogen flexibel om te gaan met veranderingen</label>
+        <select class="form-control" id="s2sub2q5" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+    </div>
+
+    <!---------------------------------->
+
+    <div id="section-page-3" class="page" style="display:none;">
+      <h2>Invloed</h2>
+
+      <!-- Subsection 1 -->
+      <h4 class="mt-3">Gedrag</h4>
+
+      <div class="question-block">
+        <label for="s3sub1q1">Ik behandel anderen met respect en erkenning voor hun standpunt, zodat zij (meer) open staan voor mijn ideeën</label>
+        <select class="form-control" id="s3sub1q1" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s3sub1q2">Ik toon zelfvertrouwen in mijn ideeën en overtuigingen</label>
+        <select class="form-control" id="s3sub1q2" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s3sub1q3">Ik neem mensen mee in mijn visie</label>
+        <select class="form-control" id="s3sub1q3" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s3sub1q4">Ik motiveer mensen om gezamenlijk aan een doel te werken</label>
+        <select class="form-control" id="s3sub1q4" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <!-- Subsection 2 -->
+      <h4 class="mt-4">Vaardigheid</h4>
+
+      <div class="question-block">
+        <label for="s3sub2q1">Ik heb het vermogen om anderen te overtuigen door logische argumenten en overtuigende communicatie</label>
+        <select class="form-control" id="s3sub2q1" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s3sub2q2">Ik heb het vermogen ideeën duidelijk en krachtig over te brengen</label>
+        <select class="form-control" id="s3sub2q2" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s3sub2q3">Ik heb het vermogen mijn aanpak aan te passen aan de situatie en/of persoon</label>
+        <select class="form-control" id="s3sub2q3" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s3sub2q4">Ik heb het vermogen empathie te tonen en daarmee relaties (verder) op te bouwen</label>
+        <select class="form-control" id="s3sub2q4" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+    </div>
+
+    <!---------------------------------->
+
+    <div id="section-page-4" class="page" style="display:none;">
+      <h2>Wendbaar</h2>
+
+      <!-- Subsection 1 -->
+      <h4 class="mt-3">Gedrag</h4>
+
+      <div class="question-block">
+        <label for="s4sub1q1">Ik pas me aan in nieuwe situaties </label>
+        <select class="form-control" id="s4sub1q1" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s4sub1q2">Ik denk in oplossingen</label>
+        <select class="form-control" id="s4sub1q2" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s4sub1q3">Ik vraag om feedback en leer hiervan</label>
+        <select class="form-control" id="s4sub1q3" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s4sub1q4">Ik heb een positieve houding tegenover verandering</label>
+        <select class="form-control" id="s4sub1q4" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s4sub1q5">Ik omarm een alternatieve werkwijze</label>
+        <select class="form-control" id="s4sub1q5" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+
+      <!-- Subsection 2 -->
+      <h4 class="mt-4">Vaardigheid</h4>
+
+      <div class="question-block">
+        <label for="s4sub2q1">Ik heb het vermogen flexibel om te gaan met verandering</label>
+        <select class="form-control" id="s4sub2q1" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s4sub2q2">Ik heb het vermogen snel een nieuwe strategie te kiezen als dit nodig is</label>
+        <select class="form-control" id="s4sub2q2" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s4sub2q3">Ik heb het vermogen om onder druk te blijven presteren</label>
+        <select class="form-control" id="s4sub2q3" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s4sub2q4">Ik heb het vermogen adequaat te reageren zonder in paniek te raken</label>
+        <select class="form-control" id="s4sub2q4" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+    </div>
+
+    <!---------------------------------->
+
+     <div id="section-page-5" class="page" style="display:none;">
+      <h2>Innovatief</h2>
+
+      <!-- Subsection 1 -->
+      <h4 class="mt-3">Gedrag</h4>
+
+      <div class="question-block">
+        <label for="s5sub1q1">Ik bedenk creatieve oplossingen voor bestaande problemen</label>
+        <select class="form-control" id="s5sub1q1" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s5sub1q2">Ik ben bereid nieuwe methoden of ideeën uit te proberen</label>
+        <select class="form-control" id="s5sub1q2" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s5sub1q3">Ik toon initiatief in het testen van nieuwe ideeën </label>
+        <select class="form-control" id="s5sub1q3" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s5sub1q4">Ik leg verbinding tussen verschillende kennisgebieden om tot een nieuwe oplossing te komen</label>
+        <select class="form-control" id="s5sub1q4" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s5sub1q5">Ik denk in mogelijkheden</label>
+        <select class="form-control" id="s5sub1q5" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+
+      <!-- Subsection 2 -->
+      <h4 class="mt-4">Vaardigheid</h4>
+
+      <div class="question-block">
+        <label for="s5sub2q1">Ik heb het vermogen om buiten de gebaande paden te bewegen</label>
+        <select class="form-control" id="s5sub2q1" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s5sub2q2">Ik heb het vermogen om nieuwe ideeën te genereren </label>
+        <select class="form-control" id="s5sub2q2" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s5sub2q3">Ik heb het vermogen om vooruit te denken</label>
+        <select class="form-control" id="s5sub2q3" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s5sub2q4">Ik heb het vermogen problemen vanuit meerdere invalshoeken te benaderen</label>
+        <select class="form-control" id="s5sub2q4" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+      <div class="question-block">
+        <label for="s5sub2q5">Ik heb het vermogen om visiegericht te denken</label>
+        <select class="form-control" id="s5sub2q5" required>
+          <option value="" hidden>Selecteer optie...</option>
+          <option>Basis</option>
+          <option>Gevorderd</option>
+          <option>Expert</option>
+        </select>
+        <textarea class="form-control mt-2" placeholder="Optionele toelichting"></textarea>
+      </div>
+
+    </div>
+
+    <!---------------------------------->
+
+
+    <!-- Navigation Buttons -->
+    <div style="display:flex; justify-content:center; align-items:center; margin:20px;">
+      <button id="prev-page-button" class="btn btn-secondary" style="display:none;">Previous</button>
+      <button id="next-page-button" class="btn btn-primary" style="display:none; margin-left:16px;">Next</button>
+      <button id="submit-button" class="btn btn-success" style="display:none; margin-left:16px;">Submit</button>
+    </div>
+
+  </div>
+
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+
+</html>
