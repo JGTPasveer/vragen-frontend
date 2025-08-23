@@ -3,7 +3,7 @@
  * Replace with your Render backend URL
  */
 //const API_BASE = 'https://your-backend.onrender.com';
-const API_BASE = 'https://vragen-backend.onrender.com/';
+const API_BASE = 'https://vragen-backend.onrender.com';
 
 /**
  * Page Navigation
