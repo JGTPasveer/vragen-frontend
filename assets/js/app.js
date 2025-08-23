@@ -83,7 +83,7 @@ function updateNavElements() {
   const progress = (currentPage / (pages.length - 1)) * 100;
   document.getElementById('progress-bar').style.width = progress + '%';
   document.getElementById('progress-bar-text').innerText =
-    'Page ' + (currentPage + 1) + ' of ' + pages.length;
+    'Pagina ' + (currentPage + 1) + ' van de ' + pages.length;
 
   document.getElementById('prev-page-button').style.display = currentPage === 0 ? 'none' : 'block';
   document.getElementById('next-page-button').style.display = currentPage === pages.length - 1 ? 'none' : 'block';
