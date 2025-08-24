@@ -51,7 +51,7 @@ document.getElementById('next-page-button').addEventListener('click', () => {
     updateQuestionnairePage();
     window.scrollTo({ top: 0, behavior: 'instant' });
   } else {
-    alert("Please fill in all required fields before continuing.");
+    alert("Vul alstublieft alle vragen in om verder te gaan.");
   }
 });
 
@@ -136,12 +136,10 @@ async function submitSurvey() {
 
     const result = await res.json();
     if (result.ok) {
-      alert("Thank you for completing the survey!");
+      alert("Bedankt voor het invullen van de vragenlijst!");
       // show a completion page
       pageVisibility(pages[currentPage], 'none');
       pageVisibility('thank-you-page', 'block');
-    } else {
-      alert("Error: " + (result.error || "Something went wrong"));
     }
   } catch (err) {
     console.error("Error submitting survey:", err);
