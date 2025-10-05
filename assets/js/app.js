@@ -20,13 +20,21 @@ const pages = [
 
 document.getElementById('start-button').addEventListener('click', () => {
   const name = document.getElementById('participant-name').value.trim();
+  const category = document.getElementById('participant-category').value;
+
   if (!name) {
     alert("Vul alstublieft uw naam in.");
+    return;
+  }
+  if (!category) {
+    alert("Selecteer alstublieft een afdeling.");
     return;
   }
 
   // store in localStorage for later use
   localStorage.setItem('participantCode', name);
+  localStorage.setItem('participantCategory', category);
+
 
   // hide landing page
   pageVisibility('landing-page', 'none');
@@ -121,7 +129,11 @@ function collectAnswers() {
 async function submitSurvey() {
   const responses = collectAnswers();
   const participantCode = localStorage.getItem('participantCode') || prompt("Enter your participant code:");
+  const participantCategory = localStorage.getItem('participantCategory');
+
   localStorage.setItem('participantCode', participantCode);
+  localStorage.setItem('participantCategory', participantCategory);
+
 
   try {
     const res = await fetch(`${API_BASE}/api/submit-survey`, {
@@ -129,6 +141,7 @@ async function submitSurvey() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         participantCode,
+        participantCategory,
         language: 'en',
         responses
       })

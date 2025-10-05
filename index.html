@@ -63,6 +63,20 @@
         <h1 class="fw-bold">Voer uw naam in om te beginnen:</h1>
       </div>
       <input type="text" id="participant-name" class="form-control" placeholder="Uw naam" required>
+      <!-- Dropdown Selection -->
+      <div id="category-select" class="mt-3 mb-4">
+        <h5 class="fw-semibold mb-3">Selecteer uw afdeling:</h5>
+        <select id="participant-category" class="form-select" required>
+          <option value="" hidden>Kies een optie...</option>
+          <option value="Optie 1">SCMA</option>
+          <option value="Optie 2">OCP</option>
+          <option value="Optie 3">APOC</option>
+          <option value="Optie 4">P&A</option>
+          <option value="Optie 5">SOLUTIONS</option>
+          <option value="Optie 6">OVERIG</option>
+        </select>
+      </div>
+
       <button id="start-button" class="btn btn-primary mt-4 mb-5">Begin</button>
       <p id="intro-text">
         Deze vragenlijst bevat vragen die met het volgende beantwoord kunnen worden:
