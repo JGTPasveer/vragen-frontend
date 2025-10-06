@@ -153,6 +153,10 @@ async function submitSurvey() {
       // show a completion page
       pageVisibility(pages[currentPage], 'none');
       pageVisibility('thank-you-page', 'block');
+      document.getElementById('prev-page-button').style.display = 'none';
+      document.getElementById('next-page-button').style.display = 'none';
+      document.getElementById('submit-button').style.display = 'none';
+      document.getElementById('progress-bar-div').style.display = 'none';
     }
   } catch (err) {
     console.error("Error submitting survey:", err);
